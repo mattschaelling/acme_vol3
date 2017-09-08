@@ -1,0 +1,28 @@
+09/07/17 18:14
+
+Problems 1 and 2 (5 points):
+FileNotFoundError: cannot find ShellFinal.zip
+
+Problem 3 (5 points):
+FileNotFoundError: cannot find ShellFinal.zip
+
+Problem 4 (10 points):
+FileNotFoundError: cannot find ShellFinal.zip
+
+Problem 5 (10 points):
+FileNotFoundError: cannot find ShellFinal.zip
+
+Problem 6 (10 points):
+FileNotFoundError: cannot find ShellFinal.zip
+
+Problem 7 (5 points):
+FileNotFoundError: cannot find ShellFinal.zip
+
+Code Quality (5 points):
+Code can be improved for grep()
+Score += 0
+
+Total score: 0/50 = 0.0%
+
+-------------------------------------------------------------------------------
+
