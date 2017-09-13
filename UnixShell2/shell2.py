@@ -1,9 +1,12 @@
 # shell2.py
 """Volume 3: Unix Shell 2.
-<Name>
-<Class>
-<Date>
+Matthew Schaelling
+Math 402
+September 7, 2017
 """
+
+import os
+from os.path import join, getsize
 
 
 # Problem 5
@@ -17,7 +20,14 @@ def grep(target_string, file_pattern):
             match the file_pattern.
         file_pattern (str): Specifies which files to search.
     """
-    raise NotImplementedError("Problem 5 Incomplete")
+    matching_files = []
+    for root, dirs, files in os.walk("."):
+        for f in files:
+            if f[-len(file_pattern):] == file_pattern:
+                with open(join(root,f), 'r') as handle:
+                   if target_string in handle.read():
+                       matching_files.append(join(root, f))
+    return matching_files
 
 
 # Problem 6
@@ -25,4 +35,9 @@ def largest_files(n):
     """Return a list of the n largest files in the current directory or its
     subdirectories (from largest to smallest).
     """
-    raise NotImplementedError("Problem 6 Incomplete")
+    file_sizes = []
+    for root, dirs, files in os.walk("."):
+        for name in files:
+            file_sizes.append((getsize(join(root, name)), join(root, name)))
+    file_sizes = sorted(file_sizes, key = lambda tup: tup[0], reverse = True)
+    return file_sizes[:n]
