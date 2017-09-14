@@ -85,3 +85,4 @@ build/
 
 # Files to NOT ignore.
 !ShellFinal.tar.gz
+fake_contacts.txt
