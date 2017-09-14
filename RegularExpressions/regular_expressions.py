@@ -1,10 +1,12 @@
 # regular_expressions.py
 """Volume 3: Regular Expressions.
-<Name>
-<Class>
-<Date>
+Matthew Schaelling
+Math 403
+September 14, 2017
 """
 
+
+import re
 
 # Problem 1
 def prob1():
@@ -14,7 +16,7 @@ def prob1():
     Returns:
         (_sre.SRE_Pattern): a compiled regular expression pattern object.
     """
-    raise NotImplementedError("Problem 1 Incomplete")
+    return re.complile("python")
 
 
 
@@ -26,7 +28,7 @@ def prob2():
     Returns:
         (_sre.SRE_Pattern): a compiled regular expression pattern object.
     """
-    raise NotImplementedError("Problem 2 Incomplete")
+    return re.compile(r"\^\{0\}\(\?\)\[\%\]\{\.\}\(\*\)\[\_\]\{\&\}\$")
 
 
 # Problem 3
@@ -40,7 +42,7 @@ def prob3():
     Returns:
         (_sre.SRE_Pattern): a compiled regular expression pattern object.
     """
-    raise NotImplementedError("Problem 3 Incomplete")
+    return re.compile(r"^(Book|Mattress|Grocery) (store|supplier)$")
 
 
 # Problem 4
@@ -51,6 +53,7 @@ def prob4():
     Returns:
         (_sre.SRE_Pattern): a compiled regular expression pattern object.
     """
+    
     raise NotImplementedError("Problem 4 Incomplete")
 
 
