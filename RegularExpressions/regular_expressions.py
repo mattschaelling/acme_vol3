@@ -53,8 +53,7 @@ def prob4():
     Returns:
         (_sre.SRE_Pattern): a compiled regular expression pattern object.
     """
-    
-    raise NotImplementedError("Problem 4 Incomplete")
+    return re.compile(r"^[a-zA-Z_]\w*$")
 
 
 # Problem 5
@@ -69,11 +68,12 @@ def prob5(code):
     Returns:
         (str): code, but with the colons inserted in the right places.
     """
-    raise NotImplementedError("Problem 5 Incomplete")
+    findcolons = re.compile(r"^((if|elif|else|for|while|try|except|finally|with|def|class).*)$", re.MULTILINE)
+    return findcolons.sub(r"\1:", code)
 
 
 # Problem 6
-def prob6(filname="fake_contacts.txt"):
+def prob6(filename="fake_contacts.txt"):
     """Use regular expressions to parse the data in the given file and format
     it uniformly, writing birthdays as mm/dd/yyyy and phone numbers as
     (xxx)xxx-xxxx. Construct a dictionary where the key is the name of an
@@ -85,4 +85,11 @@ def prob6(filname="fake_contacts.txt"):
     Returns:
         (dict): a dictionary mapping names to a dictionary of personal info.
     """
+    info = re.compile(r"^(.*)(
+    
     raise NotImplementedError("Problem 6 Incomplete")
+
+if __name__=="__main__":
+    test = """\nk, i, p = 999, 1, 0\nwhile k > i\ni *= 2\np += 1\nif k != 999\nprint("k should not have changed")\nelse\npass\nprint(p)\n"""
+    print(prob5)
+    print(prob5(test))
