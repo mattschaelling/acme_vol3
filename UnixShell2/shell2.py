@@ -7,6 +7,8 @@ September 7, 2017
 
 import os
 from os.path import join, getsize
+import fnmatch
+from glob import glob
 
 
 # Problem 5
@@ -21,13 +23,21 @@ def grep(target_string, file_pattern):
         file_pattern (str): Specifies which files to search.
     """
     matching_files = []
+    # '''
+    for f in glob("**/" + file_pattern, recursive = True):
+        with open(f, 'r') as handle:
+            if target_string in handle.read():
+                matching_files.append(f)
+    return matching_files
+    '''
     for root, dirs, files in os.walk("."):
         for f in files:
-            if f[-len(file_pattern):] == file_pattern:
+            if fnmatch.fnmatch(f, file_pattern):
                 with open(join(root,f), 'r') as handle:
                    if target_string in handle.read():
                        matching_files.append(join(root, f))
     return matching_files
+    '''
 
 
 # Problem 6
@@ -38,6 +48,9 @@ def largest_files(n):
     file_sizes = []
     for root, dirs, files in os.walk("."):
         for name in files:
-            file_sizes.append((getsize(join(root, name)), join(root, name)))
+            file_sizes.append([getsize(join(root, name)), join(root, name)])
     file_sizes = sorted(file_sizes, key = lambda tup: tup[0], reverse = True)
-    return file_sizes[:n]
+    big_files = []
+    for i in range(n):
+        big_files.append(file_sizes[i][1])
+    return big_files
