@@ -4,3 +4,89 @@ SyntaxError while loading 'regular_expressions.py': EOL while scanning string li
 
 -------------------------------------------------------------------------------
 
+09/19/17 17:05
+
+Problem 1 (5 points):
+AttributeError: module 're' has no attribute 'complile'
+
+Problem 2 (5 points):
+'^{@}(?)[%]{.}(*)[_]{&}$' doesn't match but should
+Score += 0
+
+Problem 3 (5 points):
+Score += 5
+
+Problem 4 (5 points):
+Score += 5
+
+Problem 5 (5 points):
+prob5() failed
+	Correct response: k, i, p = 999, 1, 0
+        while k > i:
+            i *= 2
+            p += 1
+            if k != 999:
+                print("k should not have changed")
+            else:
+                pass
+        print(p)
+	Student response: k, i, p = 999, 1, 0
+        while k > i
+            i *= 2
+            p += 1
+            if k != 999
+                print("k should not have changed")
+            else
+                pass
+        print(p)
+prob5() failed
+	Correct response: for _ in range(5):
+            if x > 10:
+                try:
+                    x /= 2
+                except ValueError as e:
+                    print(e)
+                except:
+                    print(x)
+                finally:
+                    x += 1
+            elif x == 5:
+                x = 6
+            else:
+                while x < 4:
+                    x += 2
+        def func():
+            pass
+        class something:
+            pass
+	Student response: for _ in range(5)
+            if x > 10
+                try
+                    x /= 2
+                except ValueError as e
+                    print(e)
+                except
+                    print(x)
+                finally
+                    x += 1
+            elif x == 5
+                x = 6
+            else
+                while x < 4
+                    x += 2
+        def func()
+            pass
+        class something
+            pass
+Score += 0
+
+Problem 6 (20 points):
+NotImplementedError: Problem 6 Incomplete
+
+Code Quality (5 points):
+Score += 0
+
+Total score: 10/50 = 20.0%
+
+-------------------------------------------------------------------------------
+
