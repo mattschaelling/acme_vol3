@@ -85,7 +85,11 @@ def prob6(filename="fake_contacts.txt"):
     Returns:
         (dict): a dictionary mapping names to a dictionary of personal info.
     """
-    info = re.compile(r"^(.*)(
+    name = re.compile(r"^[a-zA-Z]*")
+    with open(filename, 'r') as fh:
+        line = fh.readline()
+        
+    info = re.compile(r"^(.*)()")
     
     raise NotImplementedError("Problem 6 Incomplete")
 
