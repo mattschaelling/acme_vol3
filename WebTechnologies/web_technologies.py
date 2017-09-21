@@ -1,8 +1,16 @@
 # solutions.py
-"""Volume 3: Web Technologies. Solutions File."""
+"""Volume 3: Web Technologies. Solutions File.
+Matthew Schaelling
+Math 403
+September 21, 2017
+"""
 
 import json
 import socket
+import matplotlib.pyplot as plt
+import matplotlib
+import numpy as np
+matplotlib.style.use('fivethirtyeight')
 
 
 # Problem 1
@@ -13,7 +21,33 @@ def prob1(filename="nyc_traffic.json"):
     total number of times that each of the 7 most common reasons for accidents
     are listed in the data set.
     """
-    raise NotImplementedError("Problem 1 Incomplete")
+    with open(filename, 'r') as f:
+        traffic_data = json.load(f)
+    reasons = dict()
+    for incident in traffic_data:
+        for i in range(1,6):
+            factor = 'contributing_factor_vehicle_' + str(i)
+            try:
+                reason = incident[factor]
+            except KeyError as e:
+                pass
+            else:
+                if reason in reasons.keys():
+                    reasons[reason] += 1
+                else:
+                    reasons[reason] = 0
+    reasons = sorted(list(reasons.items()), key = lambda x: x[1], reverse = True)
+    graphed_reasons = reasons[:7]
+    labels = []
+    number = []
+    for r in graphed_reasons:
+        labels.append(r[0].replace(' ', '\n').replace('/','/\n'))
+        number.append(r[1])
+    x = np.arange(len(labels))
+    plt.figure(figsize = (10,7))
+    plt.barh(x, number)
+    plt.yticks(x, labels, fontsize = 6)
+    plt.show()
 
 
 class TicTacToe:
