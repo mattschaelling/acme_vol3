@@ -28,7 +28,7 @@ def prob2():
     Returns:
         (_sre.SRE_Pattern): a compiled regular expression pattern object.
     """
-    return re.compile(r"\^\{0\}\(\?\)\[\%\]\{\.\}\(\*\)\[\_\]\{\&\}\$")
+    return re.compile(r"\^\{@\}\(\?\)\[\%\]\{\.\}\(\*\)\[\_\]\{\&\}\$")
 
 
 # Problem 3
@@ -43,7 +43,6 @@ def prob3():
         (_sre.SRE_Pattern): a compiled regular expression pattern object.
     """
     return re.compile(r"^(Book|Mattress|Grocery) (store|supplier)$")
-
 
 # Problem 4
 def prob4():
@@ -68,8 +67,8 @@ def prob5(code):
     Returns:
         (str): code, but with the colons inserted in the right places.
     """
-    findcolons = re.compile(r"^((if|elif|else|for|while|try|except|finally|with|def|class).*)$", re.MULTILINE)
-    return findcolons.sub(r"\1:", code)
+    findcolons = re.compile(r"((?:if|elif|else|for|while|try|except|finally|with|def|class)[^\n:]*)\n", re.MULTILINE)
+    return findcolons.sub(r"\1:\n", code)
 
 
 # Problem 6
@@ -88,12 +87,13 @@ def prob6(filename="fake_contacts.txt"):
     name = re.compile(r"^[a-zA-Z]*")
     with open(filename, 'r') as fh:
         line = fh.readline()
-        
-    info = re.compile(r"^(.*)()")
     
-    raise NotImplementedError("Problem 6 Incomplete")
+    name = re.compile(r"([ a-zA-Z]\.* )")
+    birthday = re.compile(r"[0-9]{1,2}/[0-9]{1,2}/[0-9]{2,4]")
+    email = re.compile(r"[\w\.]+@[\w\.]+")
+    phone = re.compile(r"1?-?\(?([0-9]{3})\)?-?([0-9]{3})-([0-9]{4})")
+
 
 if __name__=="__main__":
-    test = """\nk, i, p = 999, 1, 0\nwhile k > i\ni *= 2\np += 1\nif k != 999\nprint("k should not have changed")\nelse\npass\nprint(p)\n"""
-    print(prob5)
+    test = """\nk, i, p = 999, 1, 0\nwhile k > i\n\ti *= 2\n\tp += 1\n\tif k != 999\n\t\tprint("k should not have changed")\n\telse\n\t\tpass\nprint(p)\n"""
     print(prob5(test))
