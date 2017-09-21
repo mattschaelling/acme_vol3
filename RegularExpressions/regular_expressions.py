@@ -16,7 +16,7 @@ def prob1():
     Returns:
         (_sre.SRE_Pattern): a compiled regular expression pattern object.
     """
-    return re.complile("python")
+    return re.compile("python")
 
 
 
