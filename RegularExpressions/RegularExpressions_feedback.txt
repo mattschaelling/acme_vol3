@@ -90,3 +90,34 @@ Total score: 10/50 = 20.0%
 
 -------------------------------------------------------------------------------
 
+09/21/17 13:35
+
+Problem 1 (5 points):
+Score += 5
+
+Problem 2 (5 points):
+Score += 5
+
+Problem 3 (5 points):
+Score += 5
+
+Problem 4 (5 points):
+Score += 5
+
+Problem 5 (5 points):
+Score += 5
+
+Problem 6 (20 points):
+TypeError: prob6() failed to return anything
+
+Looks like you had a good start but didn't quite finish.
+Data problems like this are important for preparing for the project!
+Score += 5
+
+Code Quality (5 points):
+Score += 5
+
+Total score: 35/50 = 70.0%
+
+
+-------------------------------------------------------------------------------
