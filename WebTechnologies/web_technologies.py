@@ -25,6 +25,13 @@ def prob1(filename="nyc_traffic.json"):
         traffic_data = json.load(f)
     reasons = dict()
     for incident in traffic_data:
+        for key in incident.keys():
+            if 'contributing_factor' in key:
+                if key in reasons.keys():
+                    reasons[key] += 1
+                else:
+                    reasons[key] = 0
+    '''
         for i in range(1,6):
             factor = 'contributing_factor_vehicle_' + str(i)
             try:
@@ -36,6 +43,7 @@ def prob1(filename="nyc_traffic.json"):
                     reasons[reason] += 1
                 else:
                     reasons[reason] = 0
+    '''
     reasons = sorted(list(reasons.items()), key = lambda x: x[1], reverse = True)
     graphed_reasons = reasons[:7]
     labels = []
@@ -88,13 +96,24 @@ class TicTacToe:
 # Problem 2
 class TicTacToeEncoder(json.JSONEncoder):
     """A custom JSON Encoder for TicTacToe objects."""
-    raise NotImplementedError("Problem 2 Incomplete")
+    def default(self, obj):
+        if not isinstance(obj, TicTacToe):
+            raise TypeError("excepted a TicTacToe object for encoding")
+        return {'dtype':'TicTacToe Object', 'data':{'board':self.board , 'turn':self.turn, 'winner':self.winner}}
 
 
 # Problem 2
 def tic_tac_toe_decoder(obj):
     """A custom JSON decoder for TicTacToe objects."""
-    raise NotImplementedError("Problem 2 Incomplete")
+    if "dtype" in obj:
+        if item["dtype"] != "TicTacToe Object" or "data" not in obj:
+            raise ValueError("Expected a JSON message from TicTacToeEncoder")
+        tictactoe = TicTacToe()
+        tictactoe.board = obj["data"]['board']
+        tictactoe.turn = obj['data']['turn']
+        tictactoe.winner = obj['data']['winner']
+        return tictactoe
+    raise ValueError("Expected a JSON message from TicTacToeEncoder")
 
 
 def mirror_server(server_address=("0.0.0.0", 33333)):
@@ -151,6 +170,27 @@ def mirror_client(server_address=("0.0.0.0", 33333)):
 # Problem 3
 def tic_tac_toe_server(server_address=("0.0.0.0", 44444)):
     """A server for playing tic-tac-toe with random moves."""
+    print("Starting TicTacToe server on {}".format(server_address))
+
+    server_sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+    server_sock.bind(server_address)
+    server_sock.listen(1)
+
+    while True:
+        print("\nWaiting for a connection...")
+        connection, client_address = server_sock.accept()
+        try:
+            print("Connection accepted from {}.".format(client_address))
+            in_data = connection.recv(1024).decode()
+            tictactoe = tic_tac_toe_decoder(in_data)
+            
+            move = random.choice(tictactoe.empty_spaces())
+            try:
+                tictactoe.move(move[0],move[1])
+            except ValueError as err:
+                if err == 'the game is over!':
+                    
+            
     raise NotImplementedError("Problem 3 Incomplete")
 
 
