@@ -1,9 +1,11 @@
 """Volume 3: Introduction to BeautifulSoup.
-<Name>
-<Class>
-<Date>
+Matthew Schaelling
+Math 403
+September 28, 2017
 """
 
+from bs4 import BeautifulSoup
+import re
 
 # Example HTML string from the lab.
 pig_html = """
@@ -30,21 +32,27 @@ def prob1():
         (set): A set of strings, each of which is the name of a tag.
         (str): The value of the 'type' attribute in the 'style' tag.
     """
-    raise NotImplementedError("Problem 1 Incomplete")
+    tags = {'html','head','title','meta','style','div','h1','p','a'}
+    type_attribute = 'text/css'
+    return tags, type_attribute
 
 
 # Problem 2
 def prob2(code):
     """Return a list of the names of the tags in the given HTML code."""
-    raise NotImplementedError("Problem 1 Incomplete")
-
+    return [tag.name for tag in BeautifulSoup(code, 'html.parser').find_all(True)]
+        
 
 # Problem 3
-def prob3(code):
-    """Loads the provided code into BeautifulSoup. Find only <p> tag with a
-    hyperlink and return its text.
+def prob3(filename="example.html"):
+    """Read the specified file and load it into BeautifulSoup. Find the only
+    <a> tag with a hyperlink and return its text.
     """
-    raise NotImplementedError("Problem 3 Incomplete")
+    soup = BeautifulSoup(filename, 'html.parser')
+    for child in soup.child.descendants:
+        if child.name == 'p':
+            if 'href' in child.attrs.keys():
+                return str(child)
 
 
 # Problem 4
@@ -60,7 +68,20 @@ def prob4(filename="san_diego_weather.html"):
     Returns:
         (list) A list of bs4.element.Tag objects (NOT text).
     """
-    raise NotImplementedError("Problem 4 Incomplete")
+    with open(filename, 'r') as f:
+        html = f.read()
+    soup = BeautifulSoup(html, 'html.parser')
+    '''
+    basket = []
+    dates = soup.find_all(class_='history-date')
+    for date in dates:
+        if "Thursday, January 1, 2015" in str(date):
+            basket.append(date)
+    '''
+    basket = [date for date in soup.find_all(class_='history-date') if "Thursday, January 1, 2015" in str(date)]
+    basket.extend([link for link in soup.find_all(name='a') if ("Previous Day" in str(link) or "Next Day" in str(link))])
+    basket.append(soup.find(class_='wx-value', text=re.compile('59')))
+    return basket
 
 
 # Problem 5
