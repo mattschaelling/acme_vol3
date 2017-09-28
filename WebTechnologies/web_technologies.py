@@ -176,29 +176,94 @@ def tic_tac_toe_server(server_address=("0.0.0.0", 44444)):
     server_sock.bind(server_address)
     server_sock.listen(1)
 
+    # if client wins, send WIN; if full board and no winner, send DRAW; both close connect
+    # make move, if server wins send LOSE with object and close connect; 
+    # if server doesnt win, send only updated object
+
     while True:
         print("\nWaiting for a connection...")
         connection, client_address = server_sock.accept()
+        def send_back(result, close):
+            print("Sending '{}' back to the client.".format(result))
+            connection.sendall(out_data.encode())
+            if close:
+                connection.close()
+                print("Closing connection from {}".format(client_address))
         try:
             print("Connection accepted from {}.".format(client_address))
             in_data = connection.recv(1024).decode()
             tictactoe = tic_tac_toe_decoder(in_data)
-            
-            move = random.choice(tictactoe.empty_spaces())
-            try:
-                tictactoe.move(move[0],move[1])
-            except ValueError as err:
-                if err == 'the game is over!':
-                    
-            
-    raise NotImplementedError("Problem 3 Incomplete")
+            spaces = tictactoe.empty_spaces()
+            if spaces:
+                move = random.choice(spaces)
+                try:
+                    tictactoe.move(move[0],move[1])
+                except ValueError as err:
+                    if err == 'the game is over!':
+                        if tictactoe.winner == 'O':
+                            send_back('WIN', True)
+                        else:
+                            print('I dont think this was supposed to happen.')
+                    if "space" in err and "already taken" in err:
+                        print("bad space, closing connection")
+                        connection.close()
+                        print("Closing connection from {}".format(client_address))
+                else:
+                    if tictactoe.board == None:
+                        out_data = TicTacToeEncoder(tictactoe)
+                        connection.sendall(out_data.encode())
+                    else:
+                        send_back('LOSE', False)
+                        out_data = TicTacToeEncoder(tictactoe)
+                        connection.sendall(out_data.encode())
+                        connection.close()
+                        print("Closing connection from {}".format(client_address))
+            else:
+                out_data = 'DRAW'
+                send_back(result, True)
 
 
-# Problem 4
 def tic_tac_toe_client(server_address=("0.0.0.0", 44444)):
     """A client program for tic_tac_toe_server()."""
-    raise NotImplementedError("Problem 4 Incomplete")
-
+    print("Attempting to connect to server at {}...".format(server_address))
+    client_sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+    client_sock.connect(server_address)    # Attempt to connect to the server
+    tictactoe = TicTacToe()
+    while True:
+        print(tictactoe.board)
+        row = input("Please enter 0,1,2 to select your row: ")
+        column = input("Please enter 0,1,2 to select your column: ")
+        acceptable = {0,1,2}
+        if row not in acceptable or column not in acceptable:
+            raise ValueError("Your row or column was not an acceptable input, please try again.")
+        else:
+            try:
+                tictactoe.move(row, column)
+            except ValueError as err:
+                print(err)
+            else:
+                out_data = TicTacToeEncoder(tictactoe)
+                client_sock.sendall(out_data.encode())
+                in_data = client_sock.recv(1024).decode()
+                print("Received message from server")
+                if in_data == 'WIN':
+                    print("Congrats, you're smarter than a really dumb computer")
+                    client_sock.close()
+                    break
+                elif in_data == 'DRAW':
+                    print("It's ambigious on whether or not you are smarter than a computer")
+                    client_sock.close()
+                    break
+                elif in_data == 'LOSE':
+                    print("You are dumber than a dumb computer")
+                    in_board = client_sock.recv(1024).decode()
+                    tictactoe = tic_tac_toe_decoder(in_board)
+                    print(tictactoe.board)
+                    client_sock.close()
+                    break
+                else:
+                    tictactoe = tic_tac_toe_decoder(in_data)
+                
 
 # Problem 5
 def download_nyc_data():
