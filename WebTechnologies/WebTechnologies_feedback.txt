@@ -10,3 +10,43 @@ IndentationError while loading 'web_technologies.py': expected an indented block
 
 -------------------------------------------------------------------------------
 
+09/28/17 16:29
+
+IndentationError while loading 'web_technologies.py': expected an indented block (web_technologies.py, line 194)
+
+-------------------------------------------------------------------------------
+
+09/28/17 16:44
+
+IndentationError while loading 'web_technologies.py': unexpected unindent (web_technologies.py, line 196)
+
+-------------------------------------------------------------------------------
+
+09/28/17 16:45
+
+Problem 1 (5 points):
+What are the factors? Even if they were labeled correctly, would I be
+able to see the labels on the figure?
+Score += 2
+
+Problem 2 (10 points):
+AttributeError: 'TicTacToeEncoder' object has no attribute 'board'
+In TicTacToeEncoder.default(), the TicTacToe object comes in as 'obj'
+    'self' refers to the TicTacToeEncoder itself.
+Score += 6
+
+Problems 3 and 4 (20 points):
+client not implemented, server started but not very close to being complete.
+Score += 5
+
+Problems 5 and 6 (10 points):
+NotImplementedError: Problems 5 and 5 Incomplete
+
+Code Quality (5 points):
+What you did have was well written. Need to finish these labs!
+Score += 5
+
+Total score: 18/50 = 36.0%
+
+
+-------------------------------------------------------------------------------
