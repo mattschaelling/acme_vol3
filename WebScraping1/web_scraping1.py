@@ -5,7 +5,10 @@ September 28, 2017
 """
 
 from bs4 import BeautifulSoup
+import bs4
 import re
+import matplotlib.pyplot as plt
+import numpy as np
 
 # Example HTML string from the lab.
 pig_html = """
@@ -93,7 +96,15 @@ def prob5(filename="large_banks_index.html"):
     Returns:
         (list): A list of bs4.element.Tag objects (NOT text).
     """
-    raise NotImplementedError("Problem 5 Incomplete")
+    with open(filename, 'r') as f:
+        html = f.read()
+    soup = BeautifulSoup(html, 'html.parser')
+    links = soup.find_all(href=re.compile(r"200[4-9]"))
+    links.extend(soup.find_all(href=re.compile(r"20030930")))
+    links.extend(soup.find_all(href=re.compile(r"20031[0-2]")))
+    links.extend(soup.find_all(href=re.compile(r"201[0-4]")))
+    dates = [link.attrs['href'][:8] for link in links]
+    return [link for _,link in sorted(zip(dates, links), reverse = True)]
 
 
 # Problem 6
@@ -106,4 +117,52 @@ def prob6(filename="large_banks_data.html"):
 
     In the case of a tie, sort the banks alphabetically by name.
     """
-    raise NotImplementedError("Problem 6 Incomplete")
+    with open(filename, 'r') as infile:
+        html = infile.read()
+    soup = BeautifulSoup(html, 'html.parser')
+    table = soup.find(string="JPMORGAN CHASE BK/J P MORGAN CHASE & CO").parent.parent.parent
+    banks = []
+    domestic_branches = []
+    foreign_branches = []
+    for line in table.children:
+        if type(line) != bs4.element.Tag:
+            continue
+        items = line.contents
+        if items[19].contents[0] == '.':
+            continue
+        banks.append(items[1].contents[0])
+        domestic_branches.append(int(items[19].contents[0].replace(',','')))
+        foreign_branches.append(int(items[21].contents[0].replace(',','')))
+        '''
+        i = 0
+        for item in line.children:
+            if type(item) != bs4.element.Tag:
+                continue
+            if i == 0:
+                banks.append(item.attr['string'])
+            if i == 9:
+                domestic_branches.append(int(item.attr['string']))
+            if i == 10:
+                foreign_branches.append(int(item.attr['string']))
+            i += 1
+         '''
+    domestic_banks = [bank for branches, bank in sorted(zip(domestic_branches, banks), reverse=True)]
+    domestic_branches = sorted(domestic_branches, reverse=True)
+    foreign_banks = [bank for branches, bank in sorted(zip(foreign_branches, banks), reverse=True)]
+    foreign_branches = sorted(foreign_branches, reverse=True)
+    fig, ax = plt.subplots(2,1)
+    index = np.arange(1,8)
+    ax[0].barh(index, domestic_branches[:7])
+    ax[0].set_yticks(index)
+    ax[0].set_yticklabels(domestic_banks[:7])
+    ax[0].set_ylabel("Bank")
+    ax[0].set_xlabel("# of Domestic Branches")
+    ax[1].barh(index, foreign_branches[:7])
+    ax[1].set_yticks(index)
+    ax[1].set_yticklabels(foreign_banks[:7])
+    ax[1].set_ylabel("Bank")
+    ax[1].set_xlabel("# of Foreign Branches")
+    plt.tight_layout()
+    plt.show()
+    
+
