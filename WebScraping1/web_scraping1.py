@@ -35,7 +35,7 @@ def prob1():
         (set): A set of strings, each of which is the name of a tag.
         (str): The value of the 'type' attribute in the 'style' tag.
     """
-    tags = {'html','head','title','meta','style','div','h1','p','a'}
+    tags = {'html','head','title','meta','style','div','h1','body','p','a'}
     type_attribute = 'text/css'
     return tags, type_attribute
 
@@ -44,18 +44,21 @@ def prob1():
 def prob2(code):
     """Return a list of the names of the tags in the given HTML code."""
     return [tag.name for tag in BeautifulSoup(code, 'html.parser').find_all(True)]
-        
+
 
 # Problem 3
 def prob3(filename="example.html"):
     """Read the specified file and load it into BeautifulSoup. Find the only
     <a> tag with a hyperlink and return its text.
     """
-    soup = BeautifulSoup(filename, 'html.parser')
-    for child in soup.child.descendants:
-        if child.name == 'p':
+    with open(filename, 'r') as f:
+        html = f.read()
+    soup = BeautifulSoup(html, 'html.parser')
+    for child in soup.descendants:
+        if child.name == 'a':
             if 'href' in child.attrs.keys():
                 return str(child)
+    return "not found"
 
 
 # Problem 4
@@ -99,12 +102,12 @@ def prob5(filename="large_banks_index.html"):
     with open(filename, 'r') as f:
         html = f.read()
     soup = BeautifulSoup(html, 'html.parser')
-    links = soup.find_all(href=re.compile(r"200[4-9]"))
-    links.extend(soup.find_all(href=re.compile(r"20030930")))
+    links = soup.find_all(href=re.compile(r"201[0-4]"))
+    links.extend(soup.find_all(href=re.compile(r"200[4-9]")))
     links.extend(soup.find_all(href=re.compile(r"20031[0-2]")))
-    links.extend(soup.find_all(href=re.compile(r"201[0-4]")))
-    dates = [link.attrs['href'][:8] for link in links]
-    return [link for _,link in sorted(zip(dates, links), reverse = True)]
+    links.extend(soup.find_all(href=re.compile(r"20030930")))
+    dates = [link.attrs['href'][43:51] for link in links]
+    return [link for _,link in sorted(zip(dates, links), key = lambda x: x[0], reverse = True)]
 
 
 # Problem 6
@@ -164,5 +167,3 @@ def prob6(filename="large_banks_data.html"):
     ax[1].set_xlabel("# of Foreign Branches")
     plt.tight_layout()
     plt.show()
-    
-
