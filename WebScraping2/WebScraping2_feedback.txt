@@ -29,3 +29,30 @@ Comments:
 
 -------------------------------------------------------------------------------
 
+10/12/17 21:16
+
+Problem 1 (10 points):
+Score += 10
+
+Problem 2 (10 points):
+Score += 10
+
+Problem 3 (10 points):
+Incomplete
+Score += 0
+
+Problem 4 (10 points):
+Score += 10
+
+Problem 5 (10 points):
+Two big problems: each ID gets added multiple times, and the sorting is backward.
+Score += 6
+
+Code Quality (5 points):
+Score += 5
+
+Total score: 41/50 = 82.0%
+
+Comments:
+	This one is your final grade.
+
