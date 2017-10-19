@@ -57,7 +57,7 @@ def prob3(filename="example.html"):
     for child in soup.descendants:
         if child.name == 'a':
             if 'href' in child.attrs.keys():
-                return str(child)
+                return child.string
     return "not found"
 
 
