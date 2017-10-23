@@ -1,0 +1,30 @@
+10/19/17 21:28
+
+Problem 1 (5 points):
+You need n**2 - 1, but you had n**1 - 1. Pay attention to detail and check your answers!
+Score += 2
+
+Problem 2 (5 points):
+Score += 5
+
+Problem 3 (5 points):
+Score += 5
+
+Problem 4 (5 points):
+Score += 5
+
+Problem 5 (15 points):
+Score += 15
+
+Problem 6 (10 points):
+Score += 10
+
+Code Quality (5 points):
+Score += 5
+
+Total score: 47/50 = 94.0%
+
+Great job!
+
+-------------------------------------------------------------------------------
+
