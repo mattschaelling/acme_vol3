@@ -1,0 +1,24 @@
+10/26/17 20:53
+
+Data Set 1 (10 points):
+Score += 10
+
+Data Set 2 (10 points):
+Score += 10
+
+Data Set 3 (10 points):
+Score += 10
+
+Data Set 4 (10 points):
+Score += 10
+
+Data Set 5 (10 points):
+("trees" data): Girth is measured in inches, height in feet, and volume in cubic feet, so the distributions shouldn't be compared together.
+Score += 8
+
+Total score: 48/50 = 96.0%
+
+Great job!
+
+-------------------------------------------------------------------------------
+
