@@ -91,3 +91,4 @@ build/
 !ShellFinal.tar.gz
 fake_contacts.txt
 *.csv
+Pandas4/*.csv
