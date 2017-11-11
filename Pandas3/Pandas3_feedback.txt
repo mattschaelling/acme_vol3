@@ -1,0 +1,37 @@
+11/10/17 17:38
+
+Problem 1 (Iris) (5 points):
+Score += 5
+
+Problem 1 (Poisons) (5 points):
+Score += 5
+
+Problem 1 (Diamonds) (5 points):
+Score += 5
+
+Problem 2 (15 points):
+Score += 15
+
+Problem 3 (NPK) (5 points):
+Score += 5
+
+Problem 3 (Swiss) (5 points):
+Score += 5
+
+Problem 3 (choice) (5 points):
+Score += 5
+
+Code Quality (5 points):
+Your code is generally good, but you need to get in the habit of commenting it, even wnhen you're just plotting things.
+Score += 4
+
+Total score: 49/50 = 98.0%
+
+Excellent!
+
+
+Comments:
+	An EXCELLENT job analyzing the data!
+
+-------------------------------------------------------------------------------
+
