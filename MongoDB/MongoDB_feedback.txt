@@ -1,0 +1,27 @@
+11/30/17 16:03
+
+Problem 1 (5 points):
+Score += 5
+
+Problem 2 (15 points):
+Score += 15
+
+Problem 3 (15 points):
+Score += 15
+
+Problem 4 (10 points):
+Score += 10
+
+Code Quality (5 points):
+Score += 5
+
+Total score: 50/50 = 100.0%
+
+Excellent!
+
+
+Comments:
+	Nailed it!
+
+-------------------------------------------------------------------------------
+
