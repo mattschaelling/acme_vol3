@@ -1,0 +1,5 @@
+The final plot of the linear and quadratic curves really looks like neither one of them is a good model for the data.  As you know, R^2 will always increase as you increase the degree of the curve, so the 12% increase for the quadratic is also not compelling.  This data set looks like there are other factors at play (causing the various clusters), and trying to fit a line or quadratic to all the data at once seems like a stretch
+
+You should give more detail about what data cleaning was involved (or why your data was already clean after you got it).  Also, in most of your graphs you fail to clearly label the point at which Brexit happened.  This would make the before/after affects much clearer.  The regression discontinuity plot and corresponding analysis, however, is very compelling.
+
+You have a LOT of stuff running off the page (code, OLS results, etc) but I'm very impressed given the amount of time that you had to pull this together.
