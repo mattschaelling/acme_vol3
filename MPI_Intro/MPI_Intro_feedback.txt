@@ -1,0 +1,21 @@
+01/23/18 12:23
+
+Problem 1 (5 points):
+Score += 0
+
+Problem 2 (5 points):
+Score += 0
+
+Problem 3 (10 points):
+Score += 0
+
+Problem 4 (25 points):
+Score += 0
+
+Code Quality (5 points):
+Score += 0
+
+Total score: 0/50 = 0.0%
+
+-------------------------------------------------------------------------------
+
