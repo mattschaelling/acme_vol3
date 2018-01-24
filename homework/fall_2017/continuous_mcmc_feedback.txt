@@ -1,0 +1,18 @@
+12/16/17 23:15
+
+Problem 1 (5 points):
+Score += 5
+
+Problem 2 (5 points):
+Starting with x0=50 should go to something.  The dchain will just never converge.
+Score += 4
+
+Problem 3 (5 points):
+Score += 5
+
+Total score: 14/15 = 93.33%
+
+Great job!
+
+-------------------------------------------------------------------------------
+
