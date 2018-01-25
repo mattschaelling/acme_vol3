@@ -18,3 +18,16 @@ Usage:
     Process 2 received [ 0.28834079]
     Process 0 received [ 0.99893055]
 """
+
+from mpi4py import MPI
+import numpy as np
+
+comm = MPI.COMM_WORLD
+rank = comm.Get_rank()
+size = comm.Get_size()
+
+random_val = np.random.random(1)
+print("Process {} started with {}".format(rank, random_val))
+comm.Send(random_val, dest=(rank+1)%size)
+comm.Recv(random_val, source=(rank-1)%size)
+print("Process {} received {}".format(rank, random_val))

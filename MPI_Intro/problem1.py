@@ -13,3 +13,13 @@ Usage:
     # python problem1.py
     Hello from process 0
 """
+
+from mpi4py import MPI
+
+comm = MPI.COMM_WORLD
+rank = comm.Get_rank()
+
+if rank%2:
+    print("Goodbye from process {}".format(rank))
+else:
+    print("Hello from process {}".format(rank))
