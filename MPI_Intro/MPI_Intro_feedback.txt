@@ -19,3 +19,27 @@ Total score: 0/50 = 0.0%
 
 -------------------------------------------------------------------------------
 
+01/26/18 12:54
+
+Problem 1 (5 points):
+Score += 5
+
+Problem 2 (5 points):
+Score += 5
+
+Problem 3 (10 points):
+Score += 10
+
+Problem 4 (25 points):
+Score += 25
+
+Code Quality (5 points):
+Comments are really important in MPI since different processes have different tasks.
+Score += 3
+
+Total score: 48/50 = 96.0%
+
+Great job!
+
+-------------------------------------------------------------------------------
+
