@@ -25,3 +25,33 @@ Total score: 0/50 = 0.0%
 
 -------------------------------------------------------------------------------
 
+02/02/18 09:23
+
+Problem 1 (5 points):
+Score += 5
+
+Problem 2 (5 points):
+Score += 5
+
+Problem 3 (5 points):
+Score += 5
+
+Problem 4 (5 points):
+You need (i-1)%n and (j-1)%n as indices as well.
+Score += 4
+
+Problem 5 (5 points):
+Score += 5
+
+Problem 6 (20 points):
+The big problem was that you were updating the energy in every iteration (Hold = Hnew), but you should only do this when you accept the spin flip.
+Score += 16
+
+Code Quality (5 points):
+Comment your code! Commenting could have helped you spot the problem.
+Score += 3
+
+Total score: 43/50 = 86.0%
+
+-------------------------------------------------------------------------------
+
