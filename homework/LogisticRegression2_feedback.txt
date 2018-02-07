@@ -1,0 +1,16 @@
+01/27/18 13:47
+
+Digits (5 points):
+Score += 5
+
+Your_Project (11 points):
+Clear analysis.  Now what conclusions can you draw about the original question (even if it is sort of a toy question)?  Also, how do AIC/BIC relate e to your results?
+Score += 9
+
+Code Quality (2 points):
+Score += 2
+
+Total score: 16/18 = 88.89%
+
+-------------------------------------------------------------------------------
+

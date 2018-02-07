@@ -1,0 +1,13 @@
+12/22/17 18:22
+
+Written (5 points):
+Score += 5
+
+Code up ridge regression and compare coefficients  (3 points):
+No online homework submitted.
+Score += 0
+
+Total score: 5/8 = 62.5%
+
+-------------------------------------------------------------------------------
+
