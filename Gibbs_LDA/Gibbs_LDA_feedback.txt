@@ -1,0 +1,15 @@
+02/05/18 17:07
+
+Problems 1-2 (15 points):
+Score += 0
+
+Problems 3-7 (30 points):
+Score += 0
+
+Code Quality (5 points):
+Score += 0
+
+Total score: 0/50 = 0.0%
+
+-------------------------------------------------------------------------------
+
