@@ -1,0 +1,17 @@
+02/10/18 13:40
+
+Random Zoom/Rotate/Shift + Demonstrate on Digits (5 points):
+Score += 5
+
+Train/Test on Regular and Augmented Data (3 points):
+Score += 3
+
+Code Quality (2 points):
+Score += 2
+
+Total score: 10/10 = 100.0%
+
+Excellent!
+
+-------------------------------------------------------------------------------
+
