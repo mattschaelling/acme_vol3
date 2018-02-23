@@ -1,0 +1,16 @@
+02/07/18 10:53
+
+RBF + Analysis (3 points):
+Score += 3
+
+Poly + Analysis (4 points):
+Score += 4
+
+Code Quality (2 points):
+Need code comments
+Score += 1
+
+Total score: 8/9 = 88.89%
+
+-------------------------------------------------------------------------------
+

@@ -1,0 +1,21 @@
+02/19/18 23:52
+
+Compare NB, SVM, LR on project (2 points):
+Score += 2
+
+ROC curves on cancer (3 points):
+Score += 3
+
+Choose cost func, threshhold (3 points):
+Score += 3
+
+Code Qual (Comments, Docstrings, Labeled plots, Labeled print statements, etc) (2 points):
+Need graph labels and docstrings
+Score += 1
+
+Total score: 9/10 = 90.0%
+
+Great job!
+
+-------------------------------------------------------------------------------
+
