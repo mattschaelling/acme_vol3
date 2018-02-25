@@ -1,0 +1,23 @@
+02/24/18 22:14
+
+Apply PCA to cancer dataset; describe when not suitable (3 points):
+Score += 3
+
+Evaluate classifier on full vs PCA data (3 points):
+Score += 3
+
+PCA vs not PCA on final project (3 points):
+Score += 3
+
+Random projections of final project (3 points):
+Score += 3
+
+Code Quality (2 points):
+Score += 2
+
+Total score: 14/14 = 100.0%
+
+Excellent!
+
+-------------------------------------------------------------------------------
+

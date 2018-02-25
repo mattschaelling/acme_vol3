@@ -1,0 +1,20 @@
+02/25/18 00:59
+
+Code up GDA (4 points):
+Score += 4
+
+Compare to naive bayes, logistic regression (2 points):
+Score += 2
+
+Compare to QDA from sklearn (if you coded yours up correctly, they should get the same accuracy) (2 points):
+Score += 2
+
+Code quality (Code comments on ALL code, docstrings on ALL functions, labels on plots, etc) (2 points):
+Score += 2
+
+Total score: 10/10 = 100.0%
+
+Excellent!
+
+-------------------------------------------------------------------------------
+
