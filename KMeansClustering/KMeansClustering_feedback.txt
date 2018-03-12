@@ -16,3 +16,23 @@ Total score: 0/50 = 0.0%
 
 -------------------------------------------------------------------------------
 
+03/10/18 21:15
+
+Problem 1 (15 points):
+Score += 15
+
+Problem 2 (15 points):
+You had a phi where you needed a theta, but other than that I think you had it.
+Score += 12
+
+Problem 3 (15 points):
+Score += 0
+
+Code Quality (5 points):
+Still need comments.
+Score += 1
+
+Total score: 28/50 = 56.0%
+
+-------------------------------------------------------------------------------
+
