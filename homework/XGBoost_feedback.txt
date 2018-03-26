@@ -1,0 +1,23 @@
+03/06/18 22:46
+
+XGB Grid Search on Titanic (include timing and comparison to RF, SVC) (3 points):
+compare to other classifiers?
+Score += 2
+
+XGB Grid Search on Final Project (3 points):
+Compare?
+Score += 2
+
+XGB Regressor Grid Search on Boston dataset (include timing, comparison to other methods) (3 points):
+Score += 0
+
+XGB Regressor on final project (3 points):
+Score += 0
+
+Code Quality (Comments on ALL code, neatly labeled plots, interpretable print statements, docstrings, etc) (2 points):
+Score += 1
+
+Total score: 5/14 = 35.71%
+
+-------------------------------------------------------------------------------
+

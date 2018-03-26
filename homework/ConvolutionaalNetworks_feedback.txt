@@ -1,0 +1,15 @@
+03/17/18 22:40
+
+Build CNN as in reading (4 points):
+Score += 4
+
+Experiment with different parameters and compare results ((i.e. use words) (4 points):
+Try different parameters for your CNN
+Score += 1
+
+Code quality (2 points):
+Score += 1
+
+Total score: 6/10 = 60.0%
+
+-------------------------------------------------------------------------------
