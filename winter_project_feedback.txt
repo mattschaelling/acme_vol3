@@ -1,0 +1,36 @@
+Schaelling, Matthew
+Exploration of Networks Using Machine Learning
+
+
+Motivation and Overview (10 Points)
+Score += 10
+
+Data: Quality and Discussion (10 Points)
+Score += 10
+
+Methods: Suitability and Justification (20 Points)
+Score += 20
+
+Analysis: Depth and Quality (20 Points)
+Score += 19
+
+Communication: Quality and Clarity (20 Points)
+Score += 19
+
+Graphics: Effectiveness and Quality (10 Points)
+Score += 10
+
+Impressiveness (10 Points)
+Score += 10
+
+
+TOTAL SCORE: 98/100
+
+EXCELLENT WORK!!
+
+
+Comments from graders:
+
+In the appendix, "Eigenvector Centrality" should be bolded. I was initially confused by your description of how you include centrality measures as features; I thought you were getting stats on the ranking of the nodes, not the importances. Also, shouldn't the mean importance always be 1/NumNodes?
+
+Data generating and machine learning methods are clearly, thoughtfully described. You do a good job of making the network theory accessible and skillfully merge two disparate fields. My only concern is that in calculating the mean of many of the centrality measures you don't consider the fact they these will always sum to 1 (and thus have mean 1/n_vertices) or will likely be proportional to the size of the graph (for betweenness or closeness centralities). Be careful with these.
