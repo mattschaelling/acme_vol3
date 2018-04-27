@@ -1,0 +1,15 @@
+04/26/18 21:11
+
+Code up EM for GMMs (4 points):
+Score += 0
+
+Compare GMM to K-Means (4 points):
+Score += 0
+
+Code quality (2 points):
+Score += 0
+
+Total score: 0/10 = 0.0%
+
+-------------------------------------------------------------------------------
+

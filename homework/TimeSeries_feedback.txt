@@ -1,0 +1,27 @@
+04/25/18 17:27
+
+Clean data (1 points):
+Score += 1
+
+Calculate trend, detrend, plot (3 points):
+Score += 3
+
+Calculate seasonality by hour of day, remove from series,  interpret results (3 points):
+interpret
+Score += 2
+
+Compute/plot autocorrelation for delta_j = 1,2,3 (3 points):
+Score += 3
+
+AR Model for j = 1,2,3 (3 points):
+Score += 3
+
+code quality (2 points):
+Score += 2
+
+Total score: 14/15 = 93.33%
+
+Great job!
+
+-------------------------------------------------------------------------------
+

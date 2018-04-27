@@ -1,0 +1,16 @@
+04/05/18 22:59
+
+Test NN with more layers, new activations, etc. (3 points):
+Score += 3
+
+Back Prop by hand (5 points):
+You need to show me the output of your forward pass; also some of your derivatives are off.
+Score += 3
+
+Code Quality (2 points):
+Score += 1
+
+Total score: 7/10 = 70.0%
+
+-------------------------------------------------------------------------------
+

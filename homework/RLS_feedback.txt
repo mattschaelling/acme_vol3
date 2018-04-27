@@ -1,0 +1,19 @@
+04/26/18 14:53
+
+Proof of RLS formulae (3 points):
+Score += 3
+
+Sherman-Morrison-Woodbury (2 points):
+Score += 2
+
+Code up RLS (3 points):
+Score += 3
+
+Code Quality (2 points):
+Code comments and docstrings
+Score += 0
+
+Total score: 8/10 = 80.0%
+
+-------------------------------------------------------------------------------
+

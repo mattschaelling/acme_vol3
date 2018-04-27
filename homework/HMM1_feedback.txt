@@ -1,0 +1,18 @@
+04/24/18 18:59
+
+Written problems (from Stamp notes) (5 points):
+Score += 5
+
+Forward/Backward passs (3 points):
+Score += 3
+
+Code quality (2 points):
+Tell me what you're printing for written problems (e.g. does [1,1,0] mean CCH or HHC?)
+Score += 1
+
+Total score: 9/10 = 90.0%
+
+Great job!
+
+-------------------------------------------------------------------------------
+

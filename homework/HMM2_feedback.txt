@@ -1,0 +1,24 @@
+04/25/18 12:21
+
+Written (4 points):
+Score += 4
+
+_delta/_gamma/_fit methods (3 points):
+Score += 3
+
+Declaration of Independence (plot, interpret) (3 points):
+plot?
+Score += 2
+
+War and Peace (plot, interpret) (3 points):
+plot?
+Score += 2
+
+Code Quality (2 points):
+Comments on second half?
+Score += 1
+
+Total score: 12/15 = 80.0%
+
+-------------------------------------------------------------------------------
+
